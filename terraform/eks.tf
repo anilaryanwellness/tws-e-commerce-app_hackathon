@@ -77,7 +77,7 @@ module "eks" {
 
   eks_managed_node_group_defaults = {
 
-    instance_types = ["t3.large"]
+    instance_types = ["c7i-flex.large"]
 
     attach_cluster_primary_security_group = true
 
