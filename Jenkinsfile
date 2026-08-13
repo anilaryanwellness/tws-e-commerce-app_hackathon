@@ -8,7 +8,7 @@ pipeline {
         DOCKER_IMAGE_NAME = 'anilaryanwellness/easyshop-app'
         DOCKER_MIGRATION_IMAGE_NAME = 'anilaryanwellness/easyshop-migration'
         DOCKER_IMAGE_TAG = "${BUILD_NUMBER}"
-        GITHUB_CREDENTIALS = credentials('github-credentials')
+        GITHUB_CREDENTIALS = credentials('git')
         GIT_BRANCH = "master"
     }
     
@@ -86,7 +86,7 @@ pipeline {
                             docker_push(
                                 imageName: env.DOCKER_IMAGE_NAME,
                                 imageTag: env.DOCKER_IMAGE_TAG,
-                                credentials: 'dockerhub-credential'
+                                credentials: 'dockerhub-credential1'
                             )
                         }
                     }
@@ -98,7 +98,7 @@ pipeline {
                             docker_push(
                                 imageName: env.DOCKER_MIGRATION_IMAGE_NAME,
                                 imageTag: env.DOCKER_IMAGE_TAG,
-                                credentials: 'dockerhub-credential'
+                                credentials: 'dockerhub-credential1'
                             )
                         }
                     }
